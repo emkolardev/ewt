@@ -1,0 +1,143 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.bg-fix {
+    padding: 40px 0;
+}
+
+.donuts {
+    background-image: url('images/donuts-mobile.jpg');
+}
+
+.space {
+    background-image: url('images/space-mobile.jpg');
+}
+
+.skateboard {
+    background-image: url('images/skateboard-mobile.png');
+}
+
+.content {
+    width: 80%;
+    padding: 40px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.8);
+    line-height: 1.3;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+}
+
+.content:after {
+    display: table;
+    content: '';
+    clear: both;
+}
+
+.title {
+    margin: 0 0 20px 0;
+}
+
+.content-figure {
+    margin: 0;
+}
+
+.content-image {
+    max-width: 100%;
+    border: 2px solid #000;
+}
+
+/*==========================
+High res tablet viewports
+==========================*/
+@media (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px), (min-resolution: 192dpi) and (min-width: 768px) {
+    .skateboard {
+        background-image: url('images/skateboard-desktop.jpg');
+    }
+
+    .donuts {
+        background-image: url('images/donuts-desktop.jpg');
+    }
+
+    .space {
+        background-image: url('images/space-desktop.jpg');
+    }
+}
+
+
+@media (min-width: 760px) {
+    .content {
+        width: 600px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .content-text {
+        float: left;
+        width: 260px;
+        margin-right: 40px;
+    }
+
+    .content-figure {
+        float: left;
+        width: 220px;
+    }
+
+    .bg-fix {
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;        
+    }
+
+    .donuts {
+        background-image: url('images/donuts-tablet.jpg');
+    }
+
+    .space {
+        background-image: url('images/space-tablet.jpg');
+    }
+
+    .skateboard {
+        background-image: url('images/skateboard-tablet.jpg');
+    }
+}
+
+@media (min-width: 1000px) {
+    .content {
+        width: 800px;
+        font-size: 18px;
+    }
+
+    .content-text {
+        width: 360px;
+    }
+
+    .content-figure {
+        width: 320px;
+    }
+
+    .donuts {
+        background-image: url('images/donuts-desktop.jpg');
+    }
+
+    .space {
+        background-image: url('images/space-desktop.jpg');
+    }
+
+    .skateboard {
+        background-image: url('images/skateboard-desktop.jpg');
+    }
+}

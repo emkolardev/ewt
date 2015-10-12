@@ -1,0 +1,149 @@
+//==================================
+// import variable and mixin library
+//==================================
+
+@import 'lib';
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+/* read more: http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+}
+
+.wrapper {
+    @include gradient($mobGradientTop, $mobGradientBtm);
+    font-family: 'Lilita One', sans-serif;
+}
+
+.container {
+    @include paddings();
+}
+
+.suit-image {
+    @include transition();
+    display: block;
+    @include margins($top: 0);
+}
+
+.suit-name {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    text-align: center;
+    color: $cardText;
+    letter-spacing: 0.15rem;
+    @include transition($property: color);
+    @include textShadow(2px, -2px, 2px, -2px, $cardShadow);
+
+    &:before,
+    &:after {
+        content: '⭐️';
+        font-size: 0.8rem;
+        @include smallPad($leftRt: 2px);
+        text-shadow: none;
+        opacity: 0;
+        @include transition();
+    }
+}
+
+.card {
+    position: relative;
+    display: block;
+    @include margins($top: 0);
+    width: 260px;
+    height: 364px;
+    @include paddings($leftRt: 20px);
+    border-radius: 10px;
+    background: #fff;
+    @include transition();
+    @include boxShadow(0, 0, 10px);
+
+    &:hover {
+        @include rotate($degrees: 5deg);
+        @include boxShadow(3px, 3px, 16px);
+
+        .suit-image {
+            @include rotate(-5deg);
+        }
+
+        .suit-name {
+            color: $cardHoverText;
+        
+            &:before,
+            &:after {
+                opacity: 1;
+                font-size: 1rem;
+                @include smallPad($leftRt: 6px);
+            }
+        }
+    }
+}
+
+.card-value-top {
+    color: $cardShadow;
+    font-size: 1.4rem;
+    @include textShadow(1px, -1px, 1px, -1px, $cardText);
+    margin-bottom: 30px;
+}
+
+.card-value-bottom {
+    color: $cardShadow;
+    font-size: 1.4rem;
+    @include textShadow(1px, -1px, 1px, -1px, $cardText);
+    @include rotateXY(180deg, 180deg);
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+@media (min-width: $tabletBreakpoint) {
+    .wrapper {
+        @include gradient($tabGradientTop, $tabGradientBtm);
+    }
+
+    .container {
+        width: $tabletBreakpoint;
+        @include margins($btm: 0, $top: 0);
+    }
+
+    .cards {
+        width: 600px;
+        @include margins($btm: 0);
+    
+        //======================
+        //here be the layout fix
+        //======================
+        &:after {
+            clear: both;
+            content: '';
+            display: table;
+        }
+    }
+
+    .card {
+        float: left;
+        @include margins(0, 20px, 40px, 20px);
+    }
+}
+
+@media (min-width: $desktopBreakpoint) {
+    .wrapper {
+        @include gradient($deskGradientTop, $deskGradientBtm)
+    }
+
+    .container {
+        width: $desktopBreakpoint;
+    }
+
+    .cards {
+        width: 900px;
+        
+    }
+}

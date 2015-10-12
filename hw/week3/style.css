@@ -1,0 +1,151 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html, body {
+    font-size: 16px;
+    line-height: 1.3;
+    background: #90BEDE;
+}
+
+.wrapper {
+    background: #fff;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 10px;
+    font-size: 1rem;
+    color: #222;
+}
+
+figure {
+    margin: 0 0 2rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+.group:after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.header {
+    text-align: center;
+    border-bottom: 5px solid #333;
+    margin-bottom: 40px;
+}
+
+.h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.h3 {
+    font-size: 1.2rem;
+}
+
+.h3:before {
+    content: '👉';
+    padding-right: 7px;
+    font-size: 1.4rem;
+}
+
+.section {
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    border-bottom: 1px dotted #aaa;
+}
+
+.caption {
+    text-align: center;
+    font-style: italic;
+    padding-top: 10px;
+}
+
+.collection-figure {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.huge-homer-figure {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jon-figure {
+    width: 280px;
+    margin: 0 auto;
+}
+
+.jon-image {
+    border: 3px solid #222;
+}
+
+.footer {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/*=========================
+Tablet-sized styles
+=========================*/
+@media (min-width: 760px) {
+
+    .wrapper {
+        width: 760px;
+    }
+
+    .collection-figure {
+        width: 700px;
+    }
+
+    .huge-homer-figure {
+        width: 550px;
+    }
+
+    .jon-figure {
+        float: left;
+        margin-right: 10px;
+    }
+
+}
+
+
+/*=========================
+Desktop styles
+=========================*/
+@media (min-width: 1000px) {
+    .wrapper {
+        width: 1000px;
+    }
+
+    .collection-figure {
+        float: left;
+        width: 400px;
+        margin-right: 40px;
+    }
+
+    #collection .content {
+        float: left;
+        width: 520px;
+    }
+
+    .huge-homer-figure {
+        width: 800px;
+    }
+
+    .jon-figure {
+        margin: 0 40px 20px 0;
+    }
+}
+
+
+

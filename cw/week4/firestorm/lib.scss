@@ -1,0 +1,19 @@
+//===============
+// sass variables
+//===============
+
+$breakTablet: 760px;
+$breakDesktop: 1000px;
+
+//===============
+// mixins
+//===============
+
+@mixin transition() {
+    transition: all 0.2s ease;
+}
+
+@mixin float($width, $float) {
+    width: $width;
+    float: $float;
+}

@@ -1,0 +1,62 @@
+//================
+// sassy variables
+//================
+
+$cardHoverText: #12A3E6;
+$cardText: #FF7878;
+$cardShadow: #6B435A;
+$mobGradientTop: #777;
+$mobGradientBtm: #444;
+$tabGradientTop: #6bc8f3;
+$tabGradientBtm: #0e81b7;
+$deskGradientTop: #a56f8e;
+$deskGradientBtm: #4c2f40;
+$tabletBreakpoint: 760px;
+$desktopBreakpoint: 1000px;
+
+
+//================
+// lots of mixins!
+//================
+
+@mixin transition($property: all, $duration: 0.2s, $easing: ease, $delay: 0s) {
+  -webkit-transition: $property $duration $easing $delay;
+  transition: $property $duration $easing $delay;
+}
+
+@mixin textShadow($top, $right, $btm, $left, $color) {
+    text-shadow: $top 0 0 $color, $right 0 0 $color, 0 $btm 0 $color, 0 $left 0 $color;
+}
+
+@mixin gradient($topColor, $btmColor) {
+    background: -webkit-linear-gradient(top, $topColor 0%, $btmColor 100%);
+    background: linear-gradient(to bottom, $topColor 0%, $btmColor 100%);
+}
+
+@mixin rotate($degrees) {
+    -ms-transform: rotate($degrees);
+    -webkit-transform: rotate($degrees);
+    transform: rotate($degrees);
+}
+
+@mixin rotateXY($degX, $degY) {
+    -ms-transform: rotateX($degX) rotateY($degY);
+    -webkit-transform: rotateX($degX) rotateY($degY);
+    transform: rotateX($degX) rotateY($degY);
+}
+
+@mixin margins($top: 20px, $right: auto, $btm: 20px, $left: auto) {
+    margin: $top $right $btm $left;
+}
+
+@mixin paddings($topBtm: 20px, $leftRt: 0) {
+    padding: $topBtm $leftRt;
+}
+
+@mixin smallPad($leftRt, $topBtm: 0) {
+    padding: $topBtm $leftRt;
+}
+
+@mixin boxShadow($first, $second, $third) {
+    box-shadow: $first $second $third rgba(0, 0, 0, 0.8), inset 0 0 6px $cardHoverText;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Responsive Images Demo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+  <section class="section display-density">
+    <header class="heading">
+      Display Density
+    </header>
+    <div class="content">
+      <p>
+        Cliche meh laboris PBR cupidatat, mollit cray post-ironic organic quis church-key
+        mustache. Sint vegan excepteur normcore aliqua. Officia literally enim est,
+        XOXO eu direct trade.
+      </p>
+      <p>
+        Chia +1 umami, food truck butcher consectetur assumenda consequat aute Banksy
+        retro. Anim direct trade Neutra et viral, chia keytar meggings fap lumbersexual
+        nesciunt. Synth pour-over VHS Vice farm-to-table in. 8-bit aliqua qui artisan.
+      </p>
+    </div>
+    <figure class="fig">
+    <img src="images/whistler-rings.jpg" srcset="images/whistler-rings@2x.jpg 2x">
+    <figcaption class="caption">Olympic rings in Whistler</figcaption>
+    </figure>
+  </section>
+  <section class="section art-direction">
+    <header class="heading">
+      Art Direction
+    </header>
+    <figure class="fig">
+    	<picture>
+    	<source media="(min-width: 1000px)" srcset="images/dot-beach-desktop.jpg, images/dot-beach-desktop@2x.jpg 2x"> 
+    	<source media="(min-width: 760px)" srcset="images/dot-beach-tablet.jpg, images/dot-beach-tablet@2x.jpg 2x"> 
+    	<img src="images/dot-beach-mobile.jpg" srcset="images/dot-beach-mobile@2x.jpg 2x"> 
+    	</picture> 
+    	<figcaption class="caption">Dot at the beach</figcaption>
+    </figure>
+  </section>
+  <section class="section resolution-switching">
+    <header class="heading">
+      Resolution Switching
+    </header>
+    <figure class="fig">
+    <img src="images/snoqualmie-lake-500w.jpg" 
+        srcset="images/snoqualmie-lake-500w.jpg 500w, 
+                images/snoqualmie-lake-800w.jpg 800w, 
+                images/snoqaulmie-lake-1200w.jpg 1200w"
+        sizes="(min-width: 1000px) 700px,
+               (min-width: 760px) 500px,
+                100px">
+      <figcaption class="caption">Snoqualmie Lake</figcaption>
+    </figure>
+  </section>
+</main>
+
+</body>
+</html>

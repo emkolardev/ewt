@@ -1,0 +1,39 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+html, body {
+	height: 100%;
+}
+
+.container {
+	height: 100%;
+}
+
+.donuts {
+	background-image: url('donuts.jpg');
+}
+
+.space {
+	background-image: url('space.jpg');
+}
+
+.skateboard {
+	background-image: url('skateboard.jpg');
+}
+
+.content {
+	width: 60%;
+	padding: 40px;
+	margin: 0 auto;
+	background: rgba(255,255,255,0.8);
+}
+
+.bg-fix {
+	height: 100%;
+	padding: 40px 0 40px 0;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
