@@ -1,0 +1,100 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+img {
+  max-width: 100%; }
+
+body {
+  background: url("bg.png") top left repeat;
+  height: 100%;
+  color: white; }
+
+.container {
+  width: 96%;
+  margin: 0 auto; }
+
+.h1 {
+  font-size: 34px;
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px 0;
+  font-weight: bold;
+  font-family: arial black, helvetica, sans-serif;
+  letter-spacing: 0.05rem;
+  border-bottom: 10px solid black; }
+
+.h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold; }
+  .h2 span {
+    opacity: 0.5; }
+
+.colors {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; }
+
+.color {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  margin-bottom: 20px; }
+
+.color-sample {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  transition: all 0.2s ease; }
+  .color-sample:hover {
+    -webkit-transform: scale(1.1) rotate(2deg);
+    transform: scale(1.1) rotate(2deg); }
+
+.bring-me {
+  color: #FF5339;
+  border: 5px solid #d21c00; }
+  .bring-me .color-sample {
+    background: #FF5339; }
+
+.tealsy {
+  color: #2AC47F;
+  border: 5px solid #187049; }
+  .tealsy .color-sample {
+    background: #2AC47F; }
+
+.sad-blue {
+  color: #4C92CC;
+  border: 5px solid #275e8b; }
+  .sad-blue .color-sample {
+    background: #4C92CC; }
+
+.dark-carbon {
+  color: #55535A;
+  border: 5px solid #232225; }
+  .dark-carbon .color-sample {
+    background: #55535A; }
+
+.special {
+  order: -1;
+  background: #F1D819;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px; }
+
+@media (min-width: 760px) {
+  .container {
+    width: 700px; }
+
+  .color {
+    flex-basis: 48%; }
+
+  .special {
+    order: 3; } }
+
+/*# sourceMappingURL=style.css.map */

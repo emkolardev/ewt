@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Flexbox Blog</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="wrapper">
+
+  <header class="header">
+    <h1><a href="#">Grumpy Dev</a></h1>
+  </header>
+
+  <nav class="nav">
+    <a href="#" class="toggleNav">☰ Menu</a>
+    <ul>
+      <li><a href="#">Grumpy Home</a></li>
+      <li><a href="#">Grumpy Archive</a></li>
+      <li><a href="#">Grumpy Pictures</a></li>
+      <li><a href="#">Grumpy Links</a></li>
+      <li class="social">
+        <a href="http://twitter.com/wesbos"><i class="fa fa-twitter"></i></a>
+      </li>
+      <li class="social">
+        <a href="http://facebook.com/wesbos.developer"><i class="fa fa-facebook"></i></a>
+      </li>
+      <li class="social">
+        <a href="http://github.com/wesbos"><i class="fa fa-github"></i></a>
+      </li>
+      <li class="social">
+        <a href="http://instagram.com/wesbos"><i class="fa fa-instagram"></i></a>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <img src="http://cdn1.theodysseyonline.com/files/2015/06/08/6356938644488566691013182599_grumpy-cat.jpg">
+  </section>
+
+  <section class="content">
+    <p>
+      Photo booth sriracha church-key ugh Helvetica. 3 wolf moon cliche Etsy
+      blog, Neutra sriracha messenger bag selvage. Four loko meditation trust
+      fund, migas cardigan chia vinyl fap pickled Helvetica Banksy.
+      Thundercats banjo disrupt slow-carb bicycle rights small batch. Cray
+      cliche Schlitz, cold-pressed you probably haven't heard of them flannel
+      fingerstache. Bushwick 90's ugh, authentic farm-to-table messenger bag
+      skateboard literally next level Odd Future try-hard mustache. Butcher
+      forage readymade, dreamcatcher Wes Anderson yr Brooklyn Tumblr PBR
+      mixtape keffiyeh.
+    </p>
+
+    <p>
+      Flannel VHS blog deep v wolf Williamsburg meh shabby chic Austin
+      sriracha banh mi Banksy. Kogi Carles +1 DIY, gastropub cray meggings you
+      probably haven't heard of them normcore selvage. Farm-to-table Shoreditch
+      occupy, typewriter flannel Portland freegan salvia normcore Kickstarter
+      viral ennui Etsy. Swag listicle sustainable slow-carb, Portland VHS
+      cardigan freegan next level authentic fixie. Asymmetrical pug tattooed,
+      beard post-ironic kitsch gluten-free scenester ennui listicle VHS bespoke
+      kogi meggings. High Life drinking vinegar pork belly deep v pop-up
+      bitters. Butcher aesthetic Kickstarter, viral trust fund bespoke
+      stumptown before they sold out.
+    </p>
+  </section>
+
+  <aside class="sidebar">
+    <h2>Recent Posts</h2>
+
+    <ol>
+      <li><a href="">Grumpy about JavaScript</a></li>
+      <li><a href="">Grumpy about snacks</a></li>
+      <li><a href="">Grumpy about television</a></li>
+      <li><a href="">Grumpy about being grumpy</a></li>
+      <li><a href="">Yay! Coffee!</a></li>
+    </ol>
+  </aside>
+
+  <footer>
+    <p>&copy; Grumpy Dev</p>
+    <small>Based on <a href="http://flexbox.io/">Wes Bos' Flexbox tutorials</a></small>
+  </footer>
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+  (function($) {
+    'use strict';
+
+    $('.toggleNav').on('click',function() {
+      $('.nav ul').toggleClass('open');
+    });
+  })(window.jQuery);
+</script>
+
+</body>
+</html>

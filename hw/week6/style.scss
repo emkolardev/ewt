@@ -1,0 +1,131 @@
+$baseUnit: 20px;
+$bringMe: #FF5339;
+$tealsy: #2AC47F;
+$sadBlue: #4C92CC;
+$darkCarbon: #55535A;
+
+@mixin colorBlock($clr) {
+    color: $clr;
+    border: 5px solid darken($clr, 20%);
+
+    .color-sample {
+        background: $clr;
+    }
+}
+
+@mixin alter($val...) {
+    -webkit-transform: $val;
+    transform: $val;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    background: url('bg.png') top left repeat;
+    height: 100%;
+    color: white;
+}
+
+.container {
+    width: 96%;
+    margin: 0 auto;
+}
+
+.h1 {
+    font-size: 34px;
+    text-align: center;
+    margin: $baseUnit 0;
+    padding: $baseUnit 0;
+    font-weight: bold;
+    font-family: arial black, helvetica, sans-serif;
+    letter-spacing: 0.05rem;
+    border-bottom: 10px solid black;
+}
+
+.h2 {
+    font-size: 20px;
+    margin-bottom: $baseUnit;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    span {
+        opacity: 0.5;
+    }
+}
+
+.colors {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.color {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: $baseUnit;
+    margin-bottom: $baseUnit;
+}
+
+.color-sample {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    transition: all 0.2s ease;
+
+    &:hover {
+        @include alter(scale(1.1) rotate(2deg));
+    }
+}
+
+.bring-me {
+    @include colorBlock($bringMe);
+}
+
+.tealsy {
+    @include colorBlock($tealsy);
+}
+
+.sad-blue {
+    @include colorBlock($sadBlue);
+}
+
+.dark-carbon {
+    @include colorBlock($darkCarbon);
+}
+
+.special {
+	order: -1;
+    background: #F1D819;
+    padding: $baseUnit;
+    margin-bottom: $baseUnit;
+    border-radius: 8px;
+}
+
+@media (min-width: 760px) {
+    .container {
+        width: 700px;
+    }
+    
+    .colors {
+    }
+    
+    .color {
+	    flex-basis: 48%;
+    }
+    
+    .special {
+	    order: 3;
+    }
+}

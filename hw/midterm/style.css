@@ -1,0 +1,74 @@
+/*======================================*/
+/* sass variables and mixins */
+/*======================================*/
+/* box-sizing border-box | http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*======================================*/
+/* set base */
+body {
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility; }
+
+/*======================================*/
+/* mobile-first styles */
+.mainHeader {
+  background: #1d1d1d;
+  border: 3px solid #646464;
+  width: 100%;
+  height: 80px;
+  padding: 10px 20px; }
+  .mainHeader h1 {
+    color: white; }
+
+.mainFooter {
+  background: #1d1d1d;
+  border: 3px solid #646464;
+  width: 100%;
+  height: 80px;
+  padding: 10px 20px;
+  text-align: center; }
+  .mainFooter a {
+    color: white;
+    text-decoration: none; }
+    .mainFooter a:hover {
+      color: goldenrod; }
+
+.article {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  border: 3px solid goldenrod; }
+  .article .section {
+    padding: 20px; }
+  .article .top {
+    border: 3px solid tomato;
+    background-color: rgba(255, 99, 71, 0.3); }
+  .article .mid {
+    border: 3px solid #2ac47f;
+    background-color: rgba(42, 196, 127, 0.3); }
+  .article .btm {
+    border: 3px solid #4c92cc;
+    background-color: rgba(76, 146, 204, 0.3); }
+
+.fig {
+  margin: 0px auto;
+  width: 200px;
+  height: 200px; }
+  .fig img {
+    max-width: 100%; }
+
+@media (min-width: 760px) {
+  .fig {
+    width: 300px;
+    height: 300px; } }
+
+/*# sourceMappingURL=style.css.map */

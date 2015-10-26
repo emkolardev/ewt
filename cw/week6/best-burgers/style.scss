@@ -1,0 +1,110 @@
+$baseUnit: 20px;
+$colorAccent: #f14045;
+$colorAccentAlt: #6FB0F1;
+
+@mixin buttonBG($clr) {
+    background: $clr;
+    box-shadow: inset 0 0 8px 2px darken($clr, 15%);
+
+    &:hover {
+        box-shadow: inset 0 0 12px 4px darken($clr, 20%);
+    }
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    background: url('images/symphony.png') top left repeat;
+    height: 100%;
+    color: #444;
+}
+
+.h1 {
+    color: black;
+    font-size: 34px;
+    text-align: center;
+    margin: $baseUnit 0;
+    padding: $baseUnit 0;
+    font-weight: bold;
+    font-family: arial black, helvetica, sans-serif;
+    letter-spacing: 0.05rem;
+    border-bottom: 10px solid black;
+}
+
+.h2 {
+    font-size: 20px;
+    margin-bottom: $baseUnit;
+
+    span {
+        opacity: 0.5;
+    }
+}
+
+.burger-pic {
+    width: 300px;
+    margin: 0 auto;
+    padding: 0;
+    border: 2px solid black;
+
+    img {
+        display: block;
+    }
+}
+
+.button {
+    @include buttonBG($colorAccent);
+    text-decoration: none;
+    display: inline-block;
+    padding: ($baseUnit / 2) $baseUnit;
+    margin-top: $baseUnit;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.burger {
+    padding: $baseUnit;
+    border: 4px solid black;
+    border-radius: 4px;
+    text-align: center;
+    margin: 0 ($baseUnit / 2) $baseUnit;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.best {
+    color: black;
+
+    .h2 {
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
+
+.budget .button {
+    @include buttonBG($colorAccentAlt);
+}
+
+@media (min-width: 700px) {
+    .container {
+        width: 680px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1000px) {
+    .container {
+        width: 1000px;
+    }
+}

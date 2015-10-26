@@ -1,0 +1,172 @@
+//==================================
+// import variable and mixin library
+//==================================
+
+@import 'lib';
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html, body {
+    font-size: 62.5%;
+}
+
+.wrapper {
+    width: 100%;
+    font-size: 1.6rem;
+    line-height: 1.3;
+    overflow: hidden;
+    padding: $stndPad*2 $stndPad;
+}
+
+.site-header {
+    text-align: center;
+    background: $background;
+    color: white;
+    padding: $stndPad/2 0;
+    margin-bottom: 10px;
+}
+
+.h1 {
+    text-transform: uppercase;
+    letter-spacing: $stndLettSp;
+    @include textShadow();
+    font-size: 3.2rem;
+}
+
+.h2 {
+    text-transform: uppercase;
+    letter-spacing: $stndLettSp;
+    @include textShadow();
+    font-size: 2.4rem;
+
+    &:before, &:after {
+        content: '\7e';
+        padding: 0 $stndPad/4;
+    }
+
+}
+
+.h3 {
+    text-transform: uppercase;
+    letter-spacing: $stndLettSp;
+    @include textShadow();
+    font-size: 2rem;
+}
+
+.plain-nav {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.nav-item {
+    text-align: center;
+
+    & a {
+        background: rgba(255, 255, 255, 0.5);
+        display: block;
+        padding: $stndPad/2;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        color: $background;
+        font-weight: bold;
+        letter-spacing: $stndLettSp;
+
+        &:hover {
+            background: rgba(240, 240, 240, 0.5);
+            @include transform();
+            color: #b81147;
+        }
+    }
+}
+
+.nav-social a:hover {
+    @include transform($scale: 1.5, $deg: 360deg);
+}
+
+.imgA, .imgB {
+    display: block;
+    margin: 40px auto;
+    border: 4px solid black;
+    width: 300px;
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: $tabletWid) {
+    body {
+        background-image: url("images/bg-map.jpg");
+        background-size: cover;
+        background-position: top center;
+        background-attachment: fixed;
+        margin: 40px auto;
+        width: 100%;
+
+        @media (min-width: $desktopWid) {
+            background-image: url("images/bg-map-large.jpg");
+        }
+}
+
+    .site-nav {
+        border-bottom: 1px dotted #ccc;
+    
+        &:after {
+            @include clearFix();
+        }    
+
+    }
+
+    .nav-item {
+        float: left;
+        width: 16.4%;
+   
+        &.nav-social {
+            width: 6%;
+        }
+
+    }
+
+    .wrapper {
+        background: rgba(255, 255, 255, 0.75);
+        width: $tabletWid;
+        margin: 0 auto;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .imgA {
+        width: 600px;
+    }
+
+    .imgB {
+        display: inline-block;
+        float: left;
+        width: 300px;
+        margin: 0 20px 20px 0;
+    }
+}
+
+@media (min-width: $desktopWid) {
+
+    .wrapper {
+        width: $desktopWid;
+        padding: $stndPad*3 $stndPad*2;
+    }
+
+    .imgA {
+        width: 900px;
+    }
+
+    .imgB {
+        width: 450px;
+    }
+}

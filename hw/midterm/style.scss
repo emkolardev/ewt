@@ -1,0 +1,116 @@
+/*======================================*/
+/* sass variables and mixins */
+
+$topS: rgb(255,99,71);
+$midS: rgb(42,196,127);
+$btmS: rgb(76,146,204);
+$hdrBg: rgb(29,29,29);
+$gld: rgb(218,165,32);
+$hdrBorder: rgb(100,100,100);
+$stPad: 20px;
+
+@mixin borders($color, $size: 3px) {
+	border: $size solid $color;
+}
+
+/*======================================*/
+/* box-sizing border-box | http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*======================================*/
+/* set base */
+
+body {
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+
+/*======================================*/
+/* mobile-first styles */
+
+.main {
+}
+
+.mainHeader {
+	background: $hdrBg;
+	@include borders($hdrBorder);
+	width: 100%;
+	height: 80px;
+	padding: $stPad/2 $stPad;
+
+	h1 {
+		color: white;
+	}
+}
+
+.mainFooter {
+	background: $hdrBg;
+	@include borders($hdrBorder);
+	width: 100%;
+	height: 80px;
+	padding: $stPad/2 $stPad;
+	text-align: center;
+
+	a {
+		color: white;
+		text-decoration: none;
+
+		&:hover {
+			color: $gld;
+		}
+	}
+}
+
+.article {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	@include borders($gld);
+
+	.section {
+		padding: $stPad;
+	}
+
+	.top {
+		@include borders($topS);
+		background-color: rgba(255,99,71,0.3);
+	}
+
+	.mid {
+		@include borders($midS);
+		background-color: rgba(42,196,127,0.3);
+	}
+
+	.btm {
+		@include borders($btmS);
+		background-color: rgba(76,146,204,0.3);
+	}
+}
+
+.fig {
+	margin: 0px auto;
+	width: 200px;
+	height: 200px;
+	
+	img {
+		max-width: 100%;
+	}
+}
+
+@media (min-width: 760px) {
+	.fig {
+		width: 300px;
+		height: 300px;
+	}
+}

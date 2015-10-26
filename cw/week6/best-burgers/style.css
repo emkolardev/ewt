@@ -1,0 +1,103 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background: url("images/symphony.png") top left repeat;
+  height: 100%;
+  color: #444;
+}
+
+.h1 {
+  color: black;
+  font-size: 34px;
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px 0;
+  font-weight: bold;
+  font-family: arial black, helvetica, sans-serif;
+  letter-spacing: 0.05rem;
+  border-bottom: 10px solid black;
+}
+
+.h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.h2 span {
+  opacity: 0.5;
+}
+
+.burger-pic {
+  width: 300px;
+  margin: 0 auto;
+  padding: 0;
+  border: 2px solid black;
+}
+.burger-pic img {
+  display: block;
+}
+
+.button {
+  background: #f14045;
+  box-shadow: inset 0 0 8px 2px #d51015;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.2s ease;
+}
+.button:hover {
+  box-shadow: inset 0 0 12px 4px #bd0e13;
+}
+
+.burger {
+  padding: 20px;
+  border: 4px solid black;
+  border-radius: 4px;
+  text-align: center;
+  margin: 0 10px 20px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.best {
+  color: black;
+}
+.best .h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.budget .button {
+  background: #6FB0F1;
+  box-shadow: inset 0 0 8px 2px #298aea;
+}
+.budget .button:hover {
+  box-shadow: inset 0 0 12px 4px #167de4;
+}
+
+@media (min-width: 700px) {
+  .container {
+    width: 680px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1000px) {
+  .container {
+    width: 1000px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

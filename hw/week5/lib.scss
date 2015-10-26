@@ -1,0 +1,24 @@
+//==========================================
+// variable and mixin library for style.scss
+//==========================================
+
+$background: #EB2B69;
+$stndLettSp: 0.05rem;
+$desktopWid: 1000px;
+$tabletWid: 760px;
+$stndPad: 20px;
+
+@mixin clearFix() {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+@mixin textShadow() {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+@mixin transform($scale: 1.2, $deg: 5deg) {
+    -webkit-transform: scale($scale) rotate($deg);
+    transform: scale($scale) rotate($deg);
+}

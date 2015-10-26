@@ -1,0 +1,139 @@
+@import 'lib';
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+/* read more: http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+}
+
+.wrapper {
+    @include gradient(#777, #444);
+    font-family: 'Lilita One', sans-serif;
+}
+
+.container {
+    padding: $baseUnit 0;
+}
+
+.suit-image {
+    transition: all 0.2s ease;
+    display: block;
+    margin: 0 auto $baseUnit;
+}
+
+.suit-name {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    text-align: center;
+    color: $colorAccent;
+    letter-spacing: 0.15rem;
+    transition: color 0.2s ease;
+    text-shadow: 2px 0 0 $colorSecondary,
+        -2px 0 0 $colorSecondary,
+        0 2px 0 $colorSecondary,
+        0 -2px 0 $colorSecondary;
+
+    &:before,
+    &:after {
+        content: '⭐️';
+        font-size: 0.8rem;
+        padding: 0 2px;
+        text-shadow: none;
+        opacity: 0;
+        transition: all 0.2s ease;
+    }
+}
+
+.card {
+    position: relative;
+    display: block;
+    margin: 0 auto $baseUnit;
+    width: 260px;
+    height: 364px;
+    padding: $baseUnit;
+    border-radius: 10px;
+    background: #fff;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8), inset 0 0 6px $colorPrimary;
+
+    &:hover {
+        @include transform(rotate(5deg));
+        box-shadow: 3px 3px 16px rgba(0, 0, 0, 0.8), inset 0 0 6px $colorPrimary;
+
+        .suit-image {
+            @include transform(rotate(-5deg));
+        }
+
+        .suit-name {
+            color: $colorPrimary;
+
+            &:before,
+            &:after {
+                opacity: 1;
+                font-size: 1rem;
+                padding: 0 6px;
+            }
+        }
+    }
+}
+
+.card-value-top {
+    @include cardValueCommon;
+    margin-bottom: $baseUnit * 1.5;
+}
+
+.card-value-bottom {
+    @include cardValueCommon;
+    @include transform(rotateX(180deg) rotateY(180deg));
+    position: absolute;
+    bottom: $baseUnit;
+    right: $baseUnit;
+}
+
+@media (min-width: $breakTablet) {
+    .wrapper {
+        @include gradient(lighten($colorPrimary, 20%), darken($colorPrimary, 10%));
+    }
+
+    .container {
+        width: $breakTablet;
+        margin: 0 auto;
+    }
+
+    .cards {
+        width: 600px;
+        margin: $baseUnit auto 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        margin: 0 $baseUnit ($baseUnit * 2);
+    }
+ 
+}
+
+@media (min-width: $breakDesktop) {
+    .wrapper {
+        @include gradient(lighten($colorSecondary, 20%), darken($colorSecondary, 10%));
+    }
+
+    .container {
+        width: $breakDesktop;
+    }
+
+    .cards {
+        width: 900px;
+    }
+
+
+}
