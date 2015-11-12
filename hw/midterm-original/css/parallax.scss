@@ -1,0 +1,203 @@
+/*======================================*/
+/* import some sass stuff */
+
+@import 'lib';
+@include baseStyles();
+@include headFoot($hdrBg, $liteTxt, 40px);
+
+/*======================================*/
+/* mobile-first styles */
+
+html, body {
+	height: 100%;
+}
+ 
+.main {
+	height: 100%;
+	max-width: 100%;
+}
+
+.startrek {
+	background-image: url('../images/god-760.jpg');
+	iframe {
+		width: 150px;
+		display: block;
+		@include marg();
+		@include borders(transparent, 3px, 0px, 0px);
+	}
+}
+
+.maths {
+	background-image: url('../images/theorem-760.png');
+}
+
+.frymeme {
+	background-image: url('../images/space-760.jpg');
+}
+
+.bg-par {
+	max-width: 100%;
+	height: 428px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.text {
+	width: 90%;
+	max-height: 95%;
+	padding: $pad;
+	@include marg();
+	background-color: $liteBg;
+	@include borders($liteTxt, 5px, $tb: 0px);
+	overflow: scroll;
+	z-index: 990;
+	visibility: visible;
+
+	.h1 {
+		text-align: center;
+	}
+}
+
+.triptych {
+	width: 150px;
+	@include marg();
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+		img {
+			width: 150px;
+			height: 113px;
+		}
+}
+
+.fig {
+	width: 250px;
+	@include marg();
+
+	img {
+		max-width: 100%;
+	}
+}
+
+.maxed {
+	display: block;
+	opacity: 1;
+	height: 20px;
+	padding: 0 $pad/4;
+	@include borders($imgBorder, 3px, 1px, 1px);
+	background-color: $liteTxt;
+	position: absolute;
+	z-index: 991;
+	@include marg(5px, 0);
+	left: calc(95% - 25px);
+	text-align: center;
+	cursor: pointer;
+}
+
+.shown {
+	@include keyframe(fadeIn, 0.4s, ease-out);
+	opacity: 1;
+}
+
+.minimized {
+	@include keyframe(fadeOut, 0.4s, ease-out);
+	opacity: 0;
+}
+
+/*======================================*/
+/* 550px is an unusual breakpoint, but its to 
+make the images behave without needing yet 
+another set of img src options in the html */
+
+@media (min-width: 550px) {
+	.triptych {
+		flex-direction: row;
+	}
+}
+
+/*======================================*/
+/* tablet + */
+
+@media (min-width: 760px) {
+	.startrek {
+		background-image: url('../images/god-1280.jpg');
+	}
+
+	.maths {
+		background-image: url('../images/theorem-1280.png');
+	}
+
+	.frymeme {
+		background-image: url('../images/space-1280.jpg');
+	}
+	.bg-par {
+		height: 100vh;
+		padding: $pad*2 0;
+		background-position: top center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		z-index: 980;
+	}
+	.text {
+		width: 75%;
+		height: auto;
+		max-height: 500px;
+		@include borders(none, 4px, none, none);
+		min-height: 300px;
+		box-shadow: 3px 3px 10px #444444;
+		z-index: 990;
+	}
+	.triptych {
+		flex-wrap: nowrap;
+	}
+
+	.maxed {
+		left: calc(87.5% - 25px);
+	}
+
+}
+
+/*======================================*/
+/* desktop + */
+
+@media (min-width: 1000px) {
+	.triptych img {
+		width: 250px;
+		height: 187px;
+	}	
+	.fig {
+		width: 700px;
+		padding: 0;
+		@include marg();
+	}
+}
+
+/*======================================*/
+/* keyframe animations */
+
+@-webkit-keyframes fadeOut {
+	@include fadeout();
+}
+
+@-moz-keyframes fadeOut  {
+	@include fadeout();
+}
+
+@keyframes fadeOut {
+	@include fadeout();
+}
+
+@-webkit-keyframes fadeIn {
+	@include fadein();
+}
+
+@-moz-keyframes fadeIn  {
+	@include fadein();
+}
+
+@keyframes fadeIn {
+	@include fadein();
+}

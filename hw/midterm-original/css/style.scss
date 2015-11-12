@@ -1,0 +1,66 @@
+/*======================================*/
+/* import some sass stuff */
+
+@import 'lib';
+@include baseStyles();
+@include headFoot($hdrBg, $liteTxt, 60px);
+
+/*======================================*/
+/* mobile-first styles */
+
+main {
+	width: 100%;
+}
+
+.article {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	.section {
+		padding: $pad*2;
+
+		.h1 {
+			text-align: center;
+		}
+	}
+}
+
+.fig {
+	@include marg();
+	width: 300px;
+	
+	img {
+		max-width: 100%;
+		@include borders($imgBorder, 5px, 3px, 3px);
+	}
+
+	picture {
+		width: 100%;
+	}
+}
+
+
+/*======================================*/
+/* tablet + */
+
+@media (min-width: 760px) {
+	.fig {
+		width: 600px;
+	}
+}
+
+/*======================================*/
+/* desktop + */
+
+@media (min-width: 1000px) {
+	.fig {
+		width: 650px;
+		float: right;
+		@include marg($rt: 0, $lft: 30px);
+	}
+	.section:after {
+		@include clearfix();
+	}
+}
+

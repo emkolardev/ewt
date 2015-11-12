@@ -1,0 +1,89 @@
+/*======================================*/
+/* sass variables and mixins */
+
+$bodyBg: rgb(245,245,245);
+$hdrBg: rgb(29,29,29);
+$pad: 20px;
+$imgBorder: rgba(120,120,120,1); 
+$liteTxt: rgb(255,255,255);
+$liteBg: rgb(245,245,245);
+
+@mixin marg($top: 0, $rt: auto, $btm: 0, $lft: auto) {
+	margin: $top $rt $btm $lft;
+}
+
+@mixin borders($color, $rad, $tb: 2px, $rl: 2px) {
+	border-top: $tb solid $color;
+	border-right: $rl solid $color;
+	border-bottom: $tb solid $color;
+	border-left: $rl solid $color;
+	border-radius: $rad;
+}
+
+@mixin clearfix() {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+@mixin keyframe($keyframe, $timing, $ease) {
+	-webkit-animation: $keyframe $timing;
+	-webkit-animation-timing-function: $ease;
+	-moz-animation: $keyframe $timing;
+	-moz-animation-timing-function: $ease;
+	animation: $keyframe $timing;
+	animation-timing-function: $ease;
+}
+
+@mixin fadeout() {
+	0%
+	{ opacity: 1; display: default;}
+	100%
+	{ opacity: 0; display: none;}
+}
+
+@mixin fadein() {
+	0%
+	{ opacity: 0; display: none;}
+	100%
+	{ opacity: 1; display: default;}
+}
+
+@mixin baseStyles() {
+	body {
+		color: #333;
+	  	font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+	  	font-size: 16px;
+	  	-webkit-font-smoothing: antialiased;
+	  	line-height: 1.6;
+	  	text-rendering: optimizeLegibility;
+	}
+	html {
+  		box-sizing: border-box;
+	}
+	*, *:before, *:after {
+  		box-sizing: inherit;
+	}
+}
+
+@mixin headFoot($bg, $text, $height) {
+	.mainHeader, .mainFooter {
+		background: $bg;
+		width: 100%;
+		height: $height;
+		padding: $pad/2 $pad*2;
+		text-align: center;
+
+		.h1 {
+			color: $text;
+			text-align: center;
+			display: inline-block;
+		}
+
+		a {
+			color: $text;
+			text-decoration: none;
+		}
+
+	}
+}

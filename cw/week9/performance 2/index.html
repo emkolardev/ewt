@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AJAX/Performance demo</title>
+  <link href='https://fonts.googleapis.com/css?family=Vollkorn:400,700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header wrapper">
+  <h1 class="site-title">Street Fighter II Turbo</h1>
+</header>
+
+<main class="wrapper" id="main">
+  <section class="container">
+    <div class="content">
+      <header class="content-header">
+        <h2 class="content-title">The best matchup</h2>
+      </header>
+
+      <p>
+        Twee crucifix 90's keffiyeh raw denim taxidermy, gluten-free four loko
+        umami normcore try-hard tattooed bicycle rights. Paleo locavore meh,
+        swag Bushwick ugh Pitchfork Neutra cornhole chillwave chia +1
+        fingerstache tilde. Skateboard butcher deep v irony Carles, direct trade
+        PBR kogi artisan paleo <em>Wes Anderson</em> cardigan food truck lo-fi migas.
+        Drinking vinegar bicycle rights small batch, food truck Vice flannel
+        Williamsburg.
+      </p>
+
+      <p>
+        Chambray scenester direct trade, fixie narwhal selfies swag distillery
+        actually kale chips Marfa. Tilde four loko tofu, American Apparel PBR&B
+        Etsy crucifix salvia. Four loko semiotics gastropub, organic normcore
+        photo booth ugh +1 bitters.
+      </p>
+
+      <p>
+        Banksy Brooklyn paleo ennui, Pitchfork lo-fi aesthetic Bushwick.
+        Schlitz meditation viral paleo occupy, mixtape cliche health goth
+        Shoreditch typewriter Truffaut kogi plaid chillwave. Mumblecore 90's
+        bespoke, food truck biodiesel farm-to-table Kickstarter. Kale chips
+        organic Thundercats keffiyeh put a bird on it Kickstarter, mumblecore
+        ethical squid <strong>cray</strong> artisan craft beer salvia butcher disrupt. Vice
+        actually 90's, kitsch Carles umami narwhal vegan try-hard 8-bit
+        cold-pressed Blue Bottle pickled yr. Skateboard paleo Shoreditch VHS
+        wolf viral pickled. Locavore chillwave paleo freegan street art.
+      </p>
+    </div>
+
+    <figure class="fighter">
+      <img src="images/ken-small.png" alt="Ken Masters"
+        srcset="images/ken-small.png 438w,
+                images/ken-large.png 876w"
+        sizes="(min-width: 1200px) 480px,
+                (min-width: 900px) 330px,
+                (min-width: 700px) 230px,
+                100%">
+    </figure>
+
+    <figure class="fighter">
+      <img src="images/ryu-small.png" alt="Ryu"
+        srcset="images/ryu-small.png 438w,
+                images/ryu-large.png 876w"
+        sizes="(min-width: 1200px) 480px,
+                (min-width: 900px) 330px,
+                (min-width: 700px) 230px,
+                100%">
+    </figure>
+  </section>
+  <aside class="extra">
+    <h3 class="content-title">Related Games</h3>
+
+    <!-- populated by AJAX -->
+    <ul id="related-games"></ul>
+  </aside>
+</main>
+
+<template id="game-template">
+  <li>
+    <figure>
+      <img class="game-image" src="" alt="">
+      <figcaption class="caption"></figcaption>
+    </figure>
+  </li>
+</template>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

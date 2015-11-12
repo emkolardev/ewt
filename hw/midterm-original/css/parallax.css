@@ -1,0 +1,238 @@
+/*======================================*/
+/* import some sass stuff */
+/*======================================*/
+/* sass variables and mixins */
+body {
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+.mainHeader, .mainFooter {
+  background: #1d1d1d;
+  width: 100%;
+  height: 40px;
+  padding: 10px 40px;
+  text-align: center; }
+  .mainHeader .h1, .mainFooter .h1 {
+    color: white;
+    text-align: center;
+    display: inline-block; }
+  .mainHeader a, .mainFooter a {
+    color: white;
+    text-decoration: none; }
+
+/*======================================*/
+/* mobile-first styles */
+html, body {
+  height: 100%; }
+
+.main {
+  height: 100%;
+  max-width: 100%; }
+
+.startrek {
+  background-image: url("../images/god-760.jpg"); }
+  .startrek iframe {
+    width: 150px;
+    display: block;
+    margin: 0 auto 0 auto;
+    border-top: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 0px solid transparent;
+    border-radius: 3px; }
+
+.maths {
+  background-image: url("../images/theorem-760.png"); }
+
+.frymeme {
+  background-image: url("../images/space-760.jpg"); }
+
+.bg-par {
+  max-width: 100%;
+  height: 428px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.text {
+  width: 90%;
+  max-height: 95%;
+  padding: 20px;
+  margin: 0 auto 0 auto;
+  background-color: whitesmoke;
+  border-top: 0px solid white;
+  border-right: 2px solid white;
+  border-bottom: 0px solid white;
+  border-left: 2px solid white;
+  border-radius: 5px;
+  overflow: scroll;
+  z-index: 990;
+  visibility: visible; }
+  .text .h1 {
+    text-align: center; }
+
+.triptych {
+  width: 150px;
+  margin: 0 auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .triptych img {
+    width: 150px;
+    height: 113px; }
+
+.fig {
+  width: 250px;
+  margin: 0 auto 0 auto; }
+  .fig img {
+    max-width: 100%; }
+
+.maxed {
+  display: block;
+  opacity: 1;
+  height: 20px;
+  padding: 0 5px;
+  border-top: 1px solid #787878;
+  border-right: 1px solid #787878;
+  border-bottom: 1px solid #787878;
+  border-left: 1px solid #787878;
+  border-radius: 3px;
+  background-color: white;
+  position: absolute;
+  z-index: 991;
+  margin: 5px 0 0 auto;
+  left: calc(95% - 25px);
+  text-align: center;
+  cursor: pointer; }
+
+.shown {
+  -webkit-animation: fadeIn 0.4s;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation: fadeIn 0.4s;
+  -moz-animation-timing-function: ease-out;
+  animation: fadeIn 0.4s;
+  animation-timing-function: ease-out;
+  opacity: 1; }
+
+.minimized {
+  -webkit-animation: fadeOut 0.4s;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation: fadeOut 0.4s;
+  -moz-animation-timing-function: ease-out;
+  animation: fadeOut 0.4s;
+  animation-timing-function: ease-out;
+  opacity: 0; }
+
+/*======================================*/
+/* 550px is an unusual breakpoint, but its to 
+make the images behave without needing yet 
+another set of img src options in the html */
+@media (min-width: 550px) {
+  .triptych {
+    flex-direction: row; } }
+/*======================================*/
+/* tablet + */
+@media (min-width: 760px) {
+  .startrek {
+    background-image: url("../images/god-1280.jpg"); }
+
+  .maths {
+    background-image: url("../images/theorem-1280.png"); }
+
+  .frymeme {
+    background-image: url("../images/space-1280.jpg"); }
+
+  .bg-par {
+    height: 100vh;
+    padding: 40px 0;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 980; }
+
+  .text {
+    width: 75%;
+    height: auto;
+    max-height: 500px;
+    border-top: none solid none;
+    border-right: none solid none;
+    border-bottom: none solid none;
+    border-left: none solid none;
+    border-radius: 4px;
+    min-height: 300px;
+    box-shadow: 3px 3px 10px #444444;
+    z-index: 990; }
+
+  .triptych {
+    flex-wrap: nowrap; }
+
+  .maxed {
+    left: calc(87.5% - 25px); } }
+/*======================================*/
+/* desktop + */
+@media (min-width: 1000px) {
+  .triptych img {
+    width: 250px;
+    height: 187px; }
+
+  .fig {
+    width: 700px;
+    padding: 0;
+    margin: 0 auto 0 auto; } }
+/*======================================*/
+/* keyframe animations */
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+    display: default; }
+  100% {
+    opacity: 0;
+    display: none; } }
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1;
+    display: default; }
+  100% {
+    opacity: 0;
+    display: none; } }
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    display: default; }
+  100% {
+    opacity: 0;
+    display: none; } }
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    display: none; }
+  100% {
+    opacity: 1;
+    display: default; } }
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    display: none; }
+  100% {
+    opacity: 1;
+    display: default; } }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    display: none; }
+  100% {
+    opacity: 1;
+    display: default; } }
+
+/*# sourceMappingURL=parallax.css.map */
